@@ -1,0 +1,143 @@
+<!-- ========================================
+     FLUID POWER LANDING PAGE
+     Applied Industrial Technologies
+     PASTE INTO: HubSpot Page Settings → Advanced → Header HTML
+
+     IMPORTANT — HOW THIS PAGE WORKS:
+     HubSpot strips <style> blocks out of individual Custom HTML modules, so any
+     :hover, @keyframes, or @media rule placed inside a module will NOT apply.
+     This Header HTML is the ONE reliable place for that CSS, so ALL hover states,
+     animations, the image rotator, and every responsive breakpoint live here.
+     Module files keep their layout inline (so the page still reads if this is
+     ever cleared) and reference the class names defined below.
+     ======================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Applied Industrial Technologies delivers complete fluid power support — hose and fittings, engineered hydraulic and pneumatic system design, repair, and on-site field service that keeps your operation running.">
+<meta name="keywords" content="fluid power, hydraulics, pneumatics, hydraulic hose, fluid power repair, DVA solutions, system design, panel builds, preventive maintenance, contamination control, Applied Industrial Technologies">
+<meta property="og:title" content="Fluid Power Solutions That Keep You Running | Applied Industrial Technologies">
+<meta property="og:description" content="Complete fluid power support — from hose and fittings to full system design and repair — backed by local shops and nationwide expertise.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://6847819.fs1.hubspotusercontent-na1.net/hubfs/6847819/ARS_2022_10_4_2120.jpg">
+<title>Fluid Power Solutions That Keep You Running | Applied Industrial Technologies</title>
+
+<link rel="stylesheet" href="https://use.typekit.net/yqn6gzn.css">
+
+<style>
+  /* ── Base ─────────────────────────────────────────── */
+  .applied-landing-page * { box-sizing: border-box; }
+  .applied-landing-page {
+    font-family: "din-2014", "DIN 2014", "DIN Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #212121;
+  }
+
+  /* ── Keyframes ────────────────────────────────────── */
+  @keyframes appliedFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes appliedSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes appliedSlideLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes appliedSlideRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes appliedHeroFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes appliedHeroSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Module 2: image rotator (4 slides × 4s = 16s loop, no gap) ── */
+  @keyframes afpRotatorFade {
+    0%   { opacity: 0; }
+    2%   { opacity: 1; }
+    22%  { opacity: 1; }
+    25%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .afp-rw-slide { animation: afpRotatorFade 16s linear infinite; }
+  .afp-rw-slide:nth-child(1) { animation-delay: 0s; }
+  .afp-rw-slide:nth-child(2) { animation-delay: 4s; }
+  .afp-rw-slide:nth-child(3) { animation-delay: 8s; }
+  .afp-rw-slide:nth-child(4) { animation-delay: 12s; }
+
+  /* ── Hover: cards ─────────────────────────────────── */
+  .afp-em-tile  { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+  .afp-em-tile:hover  { transform: translateY(-6px); border-color: #007b85; box-shadow: 0 14px 32px rgba(0,0,0,0.10); }
+
+  .afp-wa-row   { transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+  .afp-wa-row:hover   { border-color: #007b85; transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,123,133,0.10); }
+
+  .afp-fc-card  { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .afp-fc-card:hover  { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.10); }
+
+  /* ── Module 7: tab button transition ─────────────── */
+  .afp-cap-tab-btn { transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+
+  .afp-vid-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+  .afp-vid-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); border-color: #007b85; }
+
+  .afp-fp-card  { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .afp-fp-card:hover  { transform: translateY(-8px); box-shadow: 0 28px 64px rgba(0,0,0,0.22); }
+  .afp-fp-img   { transition: transform 0.6s ease; }
+  .afp-fp-card:hover .afp-fp-img { transform: scale(1.05); }
+
+  /* ── Hover: buttons (also have inline JS fallback in modules) ── */
+  .afp-cap-cta-btn { transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease; }
+  .afp-cap-cta-btn:hover { background: #005662; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,123,133,0.40); }
+
+  .afp-fp-cta { transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease; }
+  .afp-fp-cta:hover { background: #005662; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,123,133,0.40); }
+
+  .afp-vid-btn { transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease; }
+  .afp-vid-btn:hover { background: #1E2F5C; color: #ffffff; transform: scale(1.1); }
+
+  /* ── Video carousel scrollbar ─────────────────────── */
+  .afp-vid-carousel { scrollbar-width: thin; scrollbar-color: #007b85 #f3f4f6; }
+  .afp-vid-carousel::-webkit-scrollbar { height: 8px; }
+  .afp-vid-carousel::-webkit-scrollbar-track { background: #f3f4f6; border-radius: 10px; }
+  .afp-vid-carousel::-webkit-scrollbar-thumb { background: #007b85; border-radius: 10px; }
+
+  /* ════════════════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS (all modules)
+     ════════════════════════════════════════════════════ */
+  @media (max-width: 968px) {
+    .afp-rw-split  { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .afp-rw-rotator{ min-height: 320px !important; }
+    .afp-rw-h2     { font-size: 30px !important; }
+    .afp-em-grid   { grid-template-columns: repeat(2, 1fr) !important; }
+    .afp-wa-split  { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .afp-wa-image, .afp-wa-image img { min-height: 340px !important; }
+    .afp-wa-h2     { font-size: 30px !important; }
+    .afp-fc-grid   { grid-template-columns: 1fr !important; max-width: 560px !important; margin: 0 auto !important; }
+  }
+  @media (max-width: 900px) {
+    .afp-cap-tab-row  { overflow-x: auto !important; flex-wrap: nowrap !important; justify-content: flex-start !important; -webkit-overflow-scrolling: touch; }
+    .afp-cap-panel-grid { grid-template-columns: 1fr !important; }
+    .afp-fp-grid   { grid-template-columns: 1fr !important; }
+    .afp-fp-photo  { height: 260px !important; }
+    .afp-fp-h2     { font-size: 30px !important; }
+    .afp-contact-grid     { grid-template-columns: 1fr !important; }
+    .afp-contact-copy     { padding: 40px 32px !important; }
+    .afp-contact-form-col { padding: 40px 32px !important; }
+  }
+  @media (max-width: 768px) {
+    .afp-hero-video { display: none !important; }
+    .afp-vid-card   { flex: 0 0 340px !important; }
+    .afp-vid-h2     { font-size: 2rem !important; }
+  }
+  @media (max-width: 600px) {
+    .afp-hero-h1   { font-size: 32px !important; }
+    .afp-hero-sub  { font-size: 17px !important; }
+    .afp-cap-h2    { font-size: 30px !important; }
+    .afp-cap-panel-img { height: 260px !important; }
+  }
+  @media (max-width: 520px) {
+    .afp-em-grid   { grid-template-columns: 1fr !important; }
+    .afp-em-h2     { font-size: 28px !important; }
+    .afp-fc-h2     { font-size: 28px !important; }
+    .afp-fp-h2     { font-size: 26px !important; }
+    .afp-fp-content{ padding: 32px 24px !important; }
+  }
+  @media (max-width: 480px) {
+    .afp-vid-card     { flex: 0 0 300px !important; }
+    .afp-vid-h2       { font-size: 1.75rem !important; }
+    .afp-vid-carousel { gap: 1rem !important; }
+    .afp-contact-copy     { padding: 32px 20px !important; }
+    .afp-contact-form-col { padding: 32px 20px !important; }
+  }
+</style>
